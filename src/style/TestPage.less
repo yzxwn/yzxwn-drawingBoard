@@ -1,0 +1,264 @@
+body{
+  padding: 20px;
+}
+#app{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;
+  border: 1px solid #bdbdbd;
+}
+.test{
+  &-contend{
+    &-head{
+      position: relative;
+      height: 70px;
+      &-userMenu{
+        background-color: #c9c9c9;
+        padding-top: 2px;
+        height: 35px;
+      }
+      &-widgetMenu{
+        padding-top: 5px;
+        height: 35px;
+        background-color: #dadada;
+        border-bottom: 1px solid #bdbdbd;
+      }
+    }
+    &-con{
+      position: absolute;
+      top: 70px;
+      left: 0;
+      bottom: 40px;
+      right: 30px;
+      overflow: hidden;
+      &-transition{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      &-widget, &-con1, &-ruler{
+        margin: 0 auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        //width: 1200px;
+        //min-height: 682px;
+        //background-color: #b9b9b9;
+      }
+    }
+    &-right{
+      position: absolute;
+      top: 70px;
+      right: 0;
+      bottom: 20px;
+      background-color: #dadada;
+      border-left: 1px solid #bdbdbd;
+    }
+    &-bottom{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 40px;
+      background-color: #dadada;
+      overflow: hidden;
+      border-top: 1px solid #bdbdbd;
+    }
+  }
+  &-part{
+    &-userMenu{
+      &-menu{
+        font-size: 14px;
+        cursor: pointer;
+        &:hover{
+          color: #09ca51;
+        }
+        &-active{
+          color: #09ca51;
+          background-color: #eeeeee;
+        }
+        &-text{
+          display: inline-block;
+          margin-left: 6px;
+        }
+      }
+      &-item{
+        font-size: 20px;
+        cursor: pointer;
+        margin: 0 5px;
+        padding: 5px;
+        border-radius: 6px;
+        &:hover{
+          background-color: #e3e3e3;
+        }
+        &-active{
+          color: #09ca51;
+          background-color: #e9e9e9;
+        }
+      }
+      &-select{
+        position: absolute;
+        top: 6px;
+        right: 0;
+        &>div{
+          display: inline-block;
+          margin: 0 10px;
+        }
+        &-text{
+          font-size: 10px;
+        }
+        &-ruler{
+          & .ant-switch{
+            margin-bottom: 4px;
+          }
+          & .ant-switch-checked{
+            background-color: #09ca51;
+          }
+        }
+        &-tab{
+        }
+        &-current{
+        }
+        &-zoom{
+          & .ant-input-number {
+            width: 70px;
+          }
+        }
+      }
+    }
+    &-widgetMenu{
+      width: 100%;
+      height: 100%;
+      &-item {
+        display: inline-block;
+        padding: 0 5px;
+        & > span {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        & .ant-select-selection {
+          min-width: 60px;
+        }
+        & .ant-input-number {
+          width: 60px;
+        }
+        &-text {
+          font-size: 10px;
+          margin-right: 4px;
+        }
+        &-color {
+          width: 20px;
+          height: 20px;
+          border-radius: 4px;
+          border: 1px solid #ffffff;
+          cursor: pointer;
+        }
+      }
+      &-colorModal{
+        position: relative;
+      }
+    }
+    &-winsMenu{
+      &-menu{
+        &-item{
+          display: block;
+          font-size: 18px;
+          margin: 4px 0;
+          padding: 6px;
+          border-radius: 20px;
+          cursor: pointer;
+          &:hover{
+            background-color: #b9b9b9;
+          }
+          &:active{
+            color: #09ca51;
+            background-color: #b9b9b9;
+          }
+        }
+      }
+    }
+    &-documentMenu{
+      padding-left: 3px;
+      &-item{
+        display: inline-block;
+        margin: 0 -3px;
+        padding: 0 4px 0 8px;
+        position: relative;
+        border-top:30px solid #cbcbcb;
+        border-left:10px solid transparent;
+        border-right:10px solid transparent;
+        box-sizing: border-box;
+        &:hover{
+          border-top-color:#f7f7f7;
+        }
+        &-active{
+          border-top-color: #ffffff;
+          z-index: 5;
+          &:hover{
+            border-top-color:#ffffff;
+          }
+        }
+        &-text{
+          display: inline-block;
+          margin-top: -28px;
+          vertical-align: top;
+          line-height: 30px;
+          cursor: pointer;
+        }
+        &-close{
+          display: inline-block;
+          margin: -20px 0 0 8px;
+          vertical-align: top;
+          font-size: 12px;
+          cursor: pointer;
+          &:hover{
+            color: #df1d31;
+          }
+        }
+      }
+      &-document{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+    }
+    &-ruler{
+      font-size: 10px;
+      &-top{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #b9b9b9;
+        padding-left: 20px;
+        width: 100%;
+        height: 20px;
+      }
+      &-left{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #b9b9b9;
+        padding-top: 20px;
+        width: 20px;
+        height: 100%;
+      }
+      &-line{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
+        background-color: rgba(44, 44, 44, 0.87);
+        border-radius: 6px;
+        padding: 4px 6px;
+        color: white;
+        white-space: nowrap;
+      }
+    }
+  }
+}

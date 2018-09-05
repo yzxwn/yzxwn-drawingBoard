@@ -1,0 +1,75 @@
+@time:400ms;
+//缩放
+.transition-scale-enter {
+  opacity: 0;
+  transform: scale(0, 0);
+  transform-origin: left bottom;
+}
+.transition-scale-enter.transition-scale-enter-active {
+  opacity: 1;
+  transform: scale(1, 1);
+  transition: all @time ease-in;
+}
+.transition-scale-exit {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+.transition-scale-exit.transition-scale-exit-active {
+  opacity: 0;
+  transform: scale(0, 0);
+  transform-origin: left bottom;
+  transition: all @time ease-in;
+}
+//左推
+.transition-leftMargin-enter {
+  opacity: 0;
+  margin-left: 800px;
+}
+.transition-leftMargin-enter.transition-leftMargin-enter-active {
+  opacity: 1;
+  margin-left: 0;
+  transition: all @time ease-in;
+}
+.transition-leftMargin-exit {
+  opacity: 1;
+  margin-left: 0;
+}
+.transition-leftMargin-exit.transition-leftMargin-exit-active {
+  opacity: 0;
+  margin-left: -800px;
+  transition: all @time ease-in;
+}
+//右推
+.transition-rightMargin-enter {
+  opacity: 0;
+  margin-left: -800px;
+}
+.transition-rightMargin-enter.transition-rightMargin-enter-active {
+  opacity: 1;
+  margin-left: 0;
+  transition: all @time ease-in;
+}
+.transition-rightMargin-exit {
+  opacity: 1;
+  margin-left: 0;
+}
+.transition-rightMargin-exit.transition-rightMargin-exit-active {
+  opacity: 0;
+  margin-left: 800px;
+  transition: all @time ease-in;
+}
+//淡出
+.transition-opacity-enter {
+  opacity: 0;
+}
+.transition-opacity-enter.transition-opacity-enter-active {
+  opacity: 1;
+  transition: all @time ease-in;
+}
+.transition-opacity-exit {
+  opacity: 1;
+}
+.transition-opacity-exit.transition-opacity-exit-active {
+  opacity: 0;
+  transition: all @time ease-in;
+}
