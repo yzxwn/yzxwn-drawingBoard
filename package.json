@@ -1,13 +1,15 @@
 {
-  "name": "test",
+  "name": "whitePad",
   "version": "1.0.0",
+  "homepage": "https://xwnzt.github.io/git-whitePad",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",

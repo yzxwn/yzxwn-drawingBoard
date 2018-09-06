@@ -12,7 +12,7 @@ module.exports = {
         "index.bundle": "./src/index.tsx"
     },
     output: {
-        path: path.resolve(__dirname, "build"),
+        path: path.resolve(__dirname, "docs"),
         filename: "[name].[hash].js"
     },
     module: {
@@ -88,7 +88,7 @@ module.exports = {
             filename: "[name].css",
             chunkFilename: "[id].css"
         }),
-        new CleanwebpackPlugin(["build"]),
+        new CleanwebpackPlugin(["docs"]),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
