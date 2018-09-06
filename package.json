@@ -8,8 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
-    "build": "webpack --mode production",
-    "deploy": "gh-pages -d build"
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
