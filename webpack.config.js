@@ -20,7 +20,7 @@ module.exports = {
             {
                 test: /\.(js|jsx|tsx)$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/
+                exclude: [path.resolve(__dirname, "node_modules")],
             },
             {
                 test: /\.(ts|tsx)?$/,
@@ -61,8 +61,10 @@ module.exports = {
                     "less-loader"
                 ]
             },
-            { test: /\.png$/, loader: "url-loader?limit=100000" },
-            { test: /\.jpg$/, loader: "url-loader" },
+            {
+                test: /\.(jpg|png)$/,
+                loader: "url-loader?limit=1000&name=images/[hash:8].[name].[ext]"
+            },
         ],
     },
     resolve: {
@@ -95,6 +97,6 @@ module.exports = {
     devServer: {
         port: 9001,
         hot: true,
-        contentBase: './public'
+        // contentBase: './public'
     }
 };

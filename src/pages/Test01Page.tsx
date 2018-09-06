@@ -27,7 +27,7 @@ class Test01Page extends React.Component<Test02PageProps, Test02PageStates> {
                 <div className="test02-con">
                     {
                         con ?
-                            <img src={`img/${con}`} />
+                            <img src={require(`../img/${con}`)} />
                             : null
                     }
                 </div>
