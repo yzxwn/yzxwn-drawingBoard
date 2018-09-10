@@ -5,15 +5,13 @@ const CleanwebpackPlugin = require("clean-webpack-plugin");
 const webpack = require("webpack");
 const tsImportPluginFactory = require('ts-import-plugin');
 
-const isDev = process.env.NODE_ENV === "development";
+const isPro = process.env.NODE_ENV === "production";
 
 module.exports = {
-    entry: {
-        "index.bundle": "./src/index.tsx"
-    },
+    entry: "./src/index.tsx",
     output: {
         path: path.resolve(__dirname, "docs"),
-        filename: "[name].[hash].js"
+        filename: "static/js/[name].[hash:8].min.js",
     },
     module: {
         rules: [
@@ -56,25 +54,22 @@ module.exports = {
             // },
             {
                 test: /\.(css|less)$/,
-                use: [isDev ? MiniCssExtractPlugin.loader : "style-loader",
-                    "css-loader",
-                    "less-loader"
-                ]
+                use: [isPro ? MiniCssExtractPlugin.loader : "style-loader", "css-loader", "less-loader",]
             },
             {
                 test: /\.(jpg|png)$/,
-                loader: "url-loader?limit=10000&name=images/[hash:8].[name].[ext]"
+                loader: "url-loader",
+                options: {
+                    limit: 10000,
+                    name: 'static/images/[hash:8].[name].[ext]',
+                },
             },
         ],
     },
     resolve: {
         extensions: ['.js', '.ts', '.jsx', '.tsx','.json'],
     },
-    devtool: "inline-source-map",
-    // externals: {
-    //     "react": "React",
-    //     "react-dom": "ReactDOM"
-    // },
+    // devtool: "inline-source-map",
     plugins: [
         new HtmlWebPackPlugin({
             title: "wereret",
@@ -84,15 +79,14 @@ module.exports = {
                 collapseWhitespace: true
             },
             hash: true,
-            chunks: ["index.bundle"]
         }),
         new MiniCssExtractPlugin({
-            filename: "[name].css",
-            chunkFilename: "[id].css"
+            filename: "static/css/[name].[hash:8].min.css",
+            chunkFilename: "[id].css",
         }),
         new CleanwebpackPlugin(["docs"]),
         new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
     ],
     devServer: {
         port: 9001,
